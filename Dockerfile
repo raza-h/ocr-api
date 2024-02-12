@@ -7,11 +7,8 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       gcc \
       libmariadb-dev \
-      libmariadb-dev-0 \ 
-      libglib2.0-0 \
-      libsm6 \
-      libxrender1 \
-      libxext6
+      libmariadb-dev-compat \
+      libglib2.0-0 libsm6 libxrender1 libxext6
 
 # Update pip
 RUN python -m pip install --upgrade pip
