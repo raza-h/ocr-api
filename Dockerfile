@@ -7,10 +7,7 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       gcc \
       libmariadb-dev \
-      libmariadb-dev-0
-
-RUN apt-get update \
- && apt-get install -y \ 
+      libmariadb-dev-0 \ 
       libglib2.0-0 \
       libsm6 \
       libxrender1 \
