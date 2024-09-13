@@ -4,7 +4,6 @@ from transformers import (
     ViTModel,
     TrOCRConfig,
     ViTConfig,
-    DeiTImageProcessor
 )
 from flask_cors import CORS
 from flask import Flask, request
