@@ -29,7 +29,7 @@ trocr_config = TrOCRConfig(
     num_hidden_layers=12,
     num_attention_heads=16,
     intermediate_size=4096,
-    feature_extractor_type="DeiTImageProcessor"  
+    feature_extractor_type="TrOCRProcessor"  
 )
 
 # Initialize models
