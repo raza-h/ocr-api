@@ -1,5 +1,11 @@
-from transformers import VisionEncoderDecoderModel
-from transformers import TrOCRProcessor
+from transformers import (
+    TrOCRConfig,
+    TrOCRProcessor,
+    TrOCRForCausalLM,
+    ViTConfig,
+    ViTModel,
+    VisionEncoderDecoderModel,
+)
 from flask_cors import CORS
 from flask import Flask, request
 from PIL import Image
@@ -10,8 +16,12 @@ import cv2
 app = Flask(__name__)
 CORS(app)
 
-processor = TrOCRProcessor.from_pretrained('microsoft/trocr-base-handwritten')
-model = VisionEncoderDecoderModel.from_pretrained('microsoft/trocr-base-handwritten')
+encoder = ViTModel(ViTConfig())
+decoder = TrOCRForCausalLM(TrOCRConfig())
+model = VisionEncoderDecoderModel(encoder=encoder, decoder=decoder)
+
+processor = TrOCRProcessor.from_pretrained('microsoft/trocr-large-handwritten')
+model = VisionEncoderDecoderModel.from_pretrained('microsoft/trocr-large-handwritten')
 
 def image_to_text(word_image):
 
