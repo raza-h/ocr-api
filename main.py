@@ -10,8 +10,8 @@ import cv2
 app = Flask(__name__)
 CORS(app)
 
-processor = TrOCRProcessor.from_pretrained('microsoft/trocr-large-handwritten')
-model = VisionEncoderDecoderModel.from_pretrained('microsoft/trocr-large-handwritten')
+processor = TrOCRProcessor.from_pretrained('microsoft/trocr-base-handwritten')
+model = VisionEncoderDecoderModel.from_pretrained('microsoft/trocr-base-handwritten')
 
 def image_to_text(word_image):
 
